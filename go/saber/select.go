@@ -1,4 +1,4 @@
-package clause
+package saber
 
 // A select statement.
 type Select interface {

@@ -1,4 +1,4 @@
-package clause
+package saber
 
 // A field contained in a table.
 type Field interface {
