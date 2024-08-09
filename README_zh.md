@@ -1,21 +1,21 @@
 # <img src="./docs/logo.svg" height="35" width="35" align="left"> Saber
 
-English | [中文](./README_zh.md)
+[English](./README.md) | 中文
 
-Receiving query models that generate DSL source code, saber also includes DAO, interception and database behavior logging capabilities.
+Saber 可接收生成 DSL 源代码的查询模型，还包括 DAO、拦截和数据库行为记录功能。
 
-The features include:
+其功能包括：
 
-- Model-based DSL source code generator
-- Generate different DSL source code using a standardized computational function syntax
+- 基于模型的 DSL 源代码生成器
+- 使用标准化计算函数语法，生成不同的 DSL 源代码
 - DAOs
-- Dynamically manage multiple DataSources
-- Fetch interception and database behavior logging capabilities
-- Support for PostgreSQL, MySQL, Oracle, MSSQL and Dameng
+- 动态管理多个数据源
+- 查询拦截和数据库行为记录
+- 支持 PostgreSQL、MySQL、Oracle、MSSQL 和 Damon
 
-For function syntax in Saber, [see this](./docs/functions_in_saber.md).
+关于 Saber 中的函数语法，[请参阅](./docs/functions_in_saber.md)。
 
-## introduction
+## 简介
 
 ```javascript
 model = {'item': [{'id': '1', 'title': 'month'},
@@ -23,7 +23,7 @@ model = {'item': [{'id': '1', 'title': 'month'},
          'filter': {'field': '2', 'operator': 'eq', 'value': 10000}}
 ```
 
-Converts a JSON string into a QueryModel and renders SQL:
+将 JSON 字符串转换为 QueryModel 并渲染 SQL：
 
 ```java
 Model model = Model.fromJSON(JSON_STRING);
@@ -32,20 +32,20 @@ Select statement = Expressions.create(RUBIK_CUBE, model);
 String sql       = statement.render();
 ```
 
-Write a model and get the query:
+编写模型并获取查询：
 
 ```java
 Model model       = Model.fromJSON(JSON_STRING);
 Response response = Expressions.create(RUBIK_CUBE, model).fetch();
 ```
 
-## Writing Typesafe SQL
+## 编写类型安全的 SQL
 
 ```java
 Expressions.create(RUBIK_CUBE).select(1);
 ```
 
-More powerful examples:
+更多强大的示例：
 
 ```java
 Table orders   = RUBIK_CUBE.getTable("orders");
@@ -62,6 +62,6 @@ Select statement = Expressions.create(RUBIK_CUBE)
                               .orderBy(month.desc());
 ```
 
-## License
+## 开源声明
 
 Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
